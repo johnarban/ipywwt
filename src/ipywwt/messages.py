@@ -70,6 +70,14 @@ class SetForegroundByOpacityMessage(RemoteAPIMessage):
     id: str = field(default_factory=lambda: str(uuid4()))
 
 
+@dataclass
+class ModifySettingsMessage(RemoteAPIMessage):
+    settings: tuple
+    target: str = "app"
+    event: str = "modify_settings"
+    id: str = field(default_factory=lambda: str(uuid4()))
+
+
 msg_ref = dict(
     inspect.getmembers(
         sys.modules[__name__],
