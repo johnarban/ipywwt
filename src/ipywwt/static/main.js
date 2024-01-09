@@ -64279,7 +64279,7 @@ const SourceItem = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_ren
       e ? r.value = this.layer.name : this.layer.name = r.value;
     }
   }
-}), _withScopeId = (e) => (pushScopeId("data-v-80c8bb4c"), e = e(), popScopeId(), e), _hoisted_1 = { id: "main-container" }, _hoisted_2 = {
+}), _withScopeId = (e) => (pushScopeId("data-v-bf7403e6"), e = e(), popScopeId(), e), _hoisted_1 = { id: "main-container" }, _hoisted_2 = {
   key: 0,
   class: "detail-container"
 }, _hoisted_3 = {
@@ -64365,6 +64365,7 @@ function _sfc_render$1(e, r, n, s, a, t) {
               ]),
               default: withCtx(() => [
                 createVNode(l, {
+                  class: "color-picker-icon",
                   icon: "circle",
                   size: "lg",
                   style: normalizeStyle({
@@ -64427,7 +64428,7 @@ function _sfc_render$1(e, r, n, s, a, t) {
     })
   ], 32);
 }
-const SpreadsheetItem = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1], ["__scopeId", "data-v-80c8bb4c"]]), _sfc_main = /* @__PURE__ */ defineComponent({
+const SpreadsheetItem = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1], ["__scopeId", "data-v-bf7403e6"]]), _sfc_main = /* @__PURE__ */ defineComponent({
   name: "TransitionExpand",
   emits: ["enter", "after-enter", "leave"],
   methods: {
@@ -64484,7 +64485,7 @@ function createRender(e) {
         case "table_layer_set":
           [l, o] = Object.entries(a.wwtSpreadSheetLayers).filter(([y, g]) => g.name === t.id).at(0), c = a.spreadSheetLayerById(l);
           let _ = t.setting, u = null;
-          _.indexOf("Column") >= 0 ? u = c.get__table().header.indexOf(t.value) : _ == "color" ? u = srcExports.Color.fromHex(t.value) : _ == "colorMapper" ? u = srcExports.ColorMapContainer.fromArgbList(t.value) : _ == "altUnit" ? u = srcExports.AltUnits[t.value] : _ == "raUnits" ? u = srcExports.RAUnits[t.value] : _ == "altType" ? u = srcExports.AltTypes[t.value || "altitude"] : _ == "plotType" ? u = srcExports.PlotTypes[t.value] : _ == "markerScale" ? u = srcExports.MarkerScales[t.value] : _ == "coordinatesType" ? u = srcExports.CoordinatesTypes[t.value] : _ == "cartesianScale" ? u = srcExports.AltUnits[t.value] : u = t.value, t.value = u, window.postMessage(t);
+          _.indexOf("Column") >= 0 ? u = c.get__table().header.indexOf(t.value) : _ == "color" ? u = srcExports.Color.fromHex(t.value).toFormat() : _ == "colorMapper" ? u = srcExports.ColorMapContainer.fromArgbList(t.value) : _ == "altUnit" ? u = srcExports.AltUnits[t.value] : _ == "raUnits" ? u = srcExports.RAUnits[t.value] : _ == "altType" ? u = srcExports.AltTypes[t.value || "altitude"] : _ == "plotType" ? u = srcExports.PlotTypes[t.value] : _ == "markerScale" ? u = srcExports.MarkerScales[t.value] : _ == "coordinatesType" ? u = srcExports.CoordinatesTypes[t.value] : _ == "cartesianScale" ? u = srcExports.AltUnits[t.value] : u = t.value, t.value = u, window.postMessage(t);
           break;
         case "table_layer_remove":
           c = a.layers[t.id], window.postMessage(t);
