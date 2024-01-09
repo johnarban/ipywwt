@@ -1368,7 +1368,17 @@ const App = defineComponent({
       'removeResearchAppTableLayer',
       'setResearchAppTableLayerSelectability',
     ]),
-
+    
+    onReady() {
+      
+      const msg: ApplicationStateMessage = {
+        type: "wwt_ready",
+        sessionId: this.statusMessageSessionId,
+      }
+      // this.$options.statusMessageDestination is not set when this runs, so using window. is this bad?
+      window.postMessage(msg, this.allowedOrigin);
+    },
+  
     parseFloatParam(param: string | (string | null)[], fallback: number): number {
       if (typeof param === "string") {
         const value = parseFloat(param);
@@ -3016,6 +3026,10 @@ const App = defineComponent({
         )
       ); 
 
+    }).then(() => {
+      // We need to wait for the engine to be ready before we can start
+      // listening for messages.
+      this.onReady();
     });
 
     setTimeout(() => {
