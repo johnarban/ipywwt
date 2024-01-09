@@ -210,7 +210,18 @@ class WWTWidget(AnyWidget):
                 callback(self, updated_fields)
             except:  # noqa: E722
                 logger.exception("unhandled Python exception during a callback")
-
+    
+    def on_ready(self, callback = None):
+        """
+        Set a callback function that will be executed when the widget receives
+        the "wwt_ready" message indicating the WWT application is ready to recieve
+        messages.
+        
+        Useful for defining intialization actions that require the WWT application
+        """
+        self._set_message_type_callback("wwt_ready", callback)
+        
+    
     def _set_message_type_callback(self, ptype, callback):
         """
         Set a callback function that will be executed when the widget receives
