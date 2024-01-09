@@ -1,6 +1,6 @@
 <template>
   <div
-      id="app"
+      id="pywwt-app"
       v-if="show"
       ref="root"
       tabindex="0">
@@ -3153,7 +3153,7 @@ body {
   font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
-#app {
+#pywwt-app {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -3168,7 +3168,6 @@ body {
     margin: 0;
     padding: 0;
   }
-}
 
 #overlays {
   margin: 5px;
@@ -3559,5 +3558,6 @@ The alternative to this is to have Vue bind a class to the last element
 #display-panel > *:last-child > *:last-child {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+}
 }
 </style>
