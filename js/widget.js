@@ -15,7 +15,7 @@ async function render({model, el}) {
     const iframe = document.createElement('iframe');
     iframe.src = serverUrl + "/?origin=" + location.origin;
     iframe.style.width = "100%";
-    iframe.style.height = "400px";
+    iframe.style.height = "100%";
     iframe.style.border = "none";
     iframe.id = containerId;
 

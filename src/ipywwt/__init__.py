@@ -35,6 +35,7 @@ class WWTWidget(anywidget.AnyWidget, BaseWWTWidget):
     _message_received = traitlets.Dict(default_value={}).tag(sync=True)
 
     server_url = traitlets.Unicode(default_value="").tag(sync=True)
+    _height = '400px'
 
     def __init__(
         self, hide_all_chrome=True, port=8899, use_remote=False, *args, **kwargs
@@ -49,6 +50,7 @@ class WWTWidget(anywidget.AnyWidget, BaseWWTWidget):
 
         # Define path to research app
         self._research_app_path = RESEARCH_APP
+
 
         # Start server
         if not use_remote:
@@ -104,7 +106,12 @@ class WWTWidget(anywidget.AnyWidget, BaseWWTWidget):
         if self._dirty:
             self._commands = []  # Clear the command queue
             self._dirty = False
+    
+    def set_height(self, height):
+        """Set the height of the WWT widget."""
+        self._height = height
+        self.layout.height = height
 
     @default("layout")
     def _default_layout(self):
-        return ipywidgets.Layout(height="400px", align_self="stretch")
+        return ipywidgets.Layout(height=self._height,align_self="stretch")
