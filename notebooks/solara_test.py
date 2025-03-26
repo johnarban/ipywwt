@@ -38,8 +38,8 @@ def Page():
                     with rv.CardTitle():
                         solara.Text("WWT Widget Test")
 
-                    with rv.CardText():
-                        wwt_container = rv.Html(tag="div")
+                    with rv.CardText(style_="height: 40vh;"):
+                        wwt_container = rv.Html(tag="div", style_="height: 100%;")
 
         with rv.Row():
             with rv.Col():
@@ -132,6 +132,7 @@ def Page():
         # The `use_remote` parameter will toggle between using the remote WWT
         #  server and the local WWT server.
         wwt_widget = WWTWidget(use_remote=False)
+        wwt_widget.set_height('100%')
         all_layers.set(wwt_widget.available_layers)
 
         wwt_widget_container = solara.get_widget(wwt_container)
